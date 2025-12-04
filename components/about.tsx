@@ -25,10 +25,10 @@ const about = ({ link }: { link: boolean }) => {
       </div>
 
       <Image
-        src="/images/JG-web-04.jpg"
+        src="/images/JG-web-04.webp"
         alt="Juan Gaig Relaciones Inmobiliarias"
-        width={1920}
-        height={1080}
+        width={1280}
+        height={1024}
         className="w-full h-full object-cover object-center"
       />
     </div>

@@ -11,10 +11,10 @@ const hero = () => {
         importante que merece ser acompañada con compromiso y claridad”
       </div>
       <Image
-        src="/images/JG-web-01.jpg"
+        src="/images/JG-web-01.webp"
         alt="Juan Gaig Relaciones Inmobiliarias"
-        width={1920}
-        height={1080}
+        width={1280}
+        height={1024}
         className="w-full h-full object-cover object-left"
       />
     </div>

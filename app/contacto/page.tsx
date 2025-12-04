@@ -25,10 +25,10 @@ const page = () => {
       <h1 className="text-2xl lg:text-4xl font-semibold">Contacto</h1>
       <div className="w-full aspect-[4/5] lg:aspect-video rounded-3xl relative overflow-hidden">
         <Image
-          src="/images/JG-web-05.jpg"
+          src="/images/JG-web-05.webp"
           alt="Juan Gaig Relaciones Inmobiliarias"
-          width={1920}
-          height={1080}
+          width={1280}
+          height={1024}
           className="w-full h-full object-cover object-left"
         />
       </div>
