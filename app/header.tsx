@@ -24,7 +24,15 @@ const Header = () => {
     <header className="fixed px-4 lg:px-12 py-6 bg-white/70 w-full z-50 top-0 backdrop-blur-lg flex flex-col lg:flex-row justify-between gap-y-8">
       <div>
         <Link href="/" className="hover:opacity-60 transition-all">
-          {scrolled ? <LogoSmall /> : <Logo />}
+          {scrolled ? (
+            <LogoSmall />
+          ) : (
+            <img
+              src="/assets/logo.svg"
+              alt="Juan Gaig Relaciones Inmobiliarias"
+            />
+          )}
+          {/* {scrolled ? <LogoSmall /> : <Logo />} */}
         </Link>
       </div>
       <nav className={`lg:block ${open ? "block" : "hidden"}`}>

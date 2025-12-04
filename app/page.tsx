@@ -8,7 +8,7 @@ import Footer from "@/components/footer";
 
 export default function Home() {
   return (
-    <section className="flex flex-col gap-y-16 pt-8">
+    <section className="flex flex-col gap-y-12 pt-40">
       <Hero />
 
       <div className="bg-black text-white p-12 rounded-3xl text-center text-xl lg:text-3xl flex justify-center items-center">

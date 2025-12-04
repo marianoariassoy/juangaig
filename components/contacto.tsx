@@ -1,6 +1,7 @@
 import Title from "@/components/title";
 import Image from "next/image";
 import Form from "@/components/form";
+import Link from "next/link";
 
 const Contacto = () => {
   return (
@@ -49,9 +50,12 @@ const Contacto = () => {
       </div>
 
       <div className="flex justify-center mt-16">
-        <div className="bg-black rounded-full px-8 font-bold py-2 cursor-pointer text-white border border-black hover:bg-white hover:text-black text-lg lg:text-2xl">
+        <Link
+          href="/contacto"
+          className="bg-black rounded-full px-8 font-bold py-2 cursor-pointer text-white border border-black hover:bg-white hover:text-black text-lg lg:text-2xl"
+        >
           CONECTEMOS
-        </div>
+        </Link>
       </div>
     </section>
   );

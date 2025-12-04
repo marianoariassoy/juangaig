@@ -27,7 +27,7 @@ const Ayudar = () => {
             </p>
           </div>
           <Link
-            href="#"
+            href="/servicios"
             className="hover:underline uppercase font-bold text-lg my-4"
           >
             Conoce más
@@ -53,7 +53,7 @@ const Ayudar = () => {
             </p>
           </div>
           <Link
-            href="#"
+            href="/servicios"
             className="hover:underline uppercase font-bold text-lg my-4"
           >
             Conoce más
@@ -80,7 +80,7 @@ const Ayudar = () => {
             </p>
           </div>
           <Link
-            href="#"
+            href="/servicios"
             className="hover:underline uppercase font-bold text-lg my-4"
           >
             Conoce más
