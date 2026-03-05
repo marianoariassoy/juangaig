@@ -15,8 +15,28 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-weight: 500;
+  font-family: var(--font-inter), sans-serif;
 }
 
 .bg-secondary {
   background-color: var(--secondary);
+}
+
+.indicators li {
+  margin: 0 2px !important;
+}
+
+.react-slideshow-container .nav {
+  top: auto !important;
+  transform: none !important;
+  bottom: 24px !important;
+}
+
+.react-slideshow-container .nav:first-of-type {
+  right: 40px !important;
+  left: auto !important;
+}
+
+.react-slideshow-container .nav:last-of-type {
+  right: 16px !important;
 }

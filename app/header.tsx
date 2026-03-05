@@ -21,7 +21,9 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="fixed px-4 lg:px-12 py-6 bg-white/70 w-full z-50 top-0 backdrop-blur-lg flex flex-col lg:flex-row justify-between gap-y-8">
+    <header
+      className={`fixed px-4 lg:px-12  bg-white w-full z-50 top-0 flex flex-col lg:flex-row justify-between gap-y-8 ${scrolled ? "py-4" : "py-6"}`}
+    >
       <div>
         <Link href="/" className="hover:opacity-60 transition-all">
           {scrolled ? (
@@ -32,11 +34,10 @@ const Header = () => {
               alt="Juan Gaig Relaciones Inmobiliarias"
             />
           )}
-          {/* {scrolled ? <LogoSmall /> : <Logo />} */}
         </Link>
       </div>
       <nav className={`lg:block ${open ? "block" : "hidden"}`}>
-        <ul className="flex flex-col lg:flex-row gap-y-3 gap-x-10 text-[0.95rem]">
+        <ul className="flex flex-col lg:flex-row gap-y-3 gap-x-6 text-[0.9rem]">
           {nav.map((item, index) =>
             item.href === "/contacto" ? (
               <li key={index} className="mt-6 lg:mt-0">
@@ -58,7 +59,7 @@ const Header = () => {
                   href={item.href}
                   className={`uppercase border font-semibold rounded-2xl lg:px-4 py-2 ${
                     pathname === item.href
-                      ? "border-transparent underline lg:no-underline lg:border-black"
+                      ? "border-transparent underline lg:no-underline lg:border-black bg-black text-white"
                       : "hover:text-white hover:bg-black border-transparent"
                   }`}
                   onClick={() => setOpen(!open)}
@@ -66,18 +67,18 @@ const Header = () => {
                   {item.name}
                 </Link>
               </li>
-            )
+            ),
           )}
         </ul>
       </nav>
       <div className="lg:hidden absolute right-4">
         <button
-          className="flex items-center justify-center w-12 h-12 rounded-full bg-black text-white"
+          className="flex items-center justify-center w-10 h-10 rounded-full bg-black text-white"
           onClick={() => setOpen(!open)}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className={` h-6 w-6`}
+            className={`h-6 w-6`}
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

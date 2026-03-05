@@ -16,7 +16,7 @@ const form = () => {
         className="border rounded-full px-4 py-2 focus:outline-none text-center placeholder:text-black placeholder:font-medium"
       />
       <div className="flex justify-center">
-        <button className="bg-black rounded-full px-4 font-bold py-2 h-12 cursor-pointer text-white border border-black hover:bg-white hover:text-black leading-4  uppercase">
+        <button className="bg-black rounded-full px-8 font-bold py-2 h-12 cursor-pointer text-white border border-black hover:bg-white hover:text-black leading-4 uppercase">
           Enviar
         </button>
       </div>

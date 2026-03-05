@@ -1,11 +1,13 @@
-import React from "react";
+"use client";
 
 const footer = () => {
+  const year = new Date().getFullYear();
+
   return (
     <footer className="flex flex-col">
       <hr className="border-black border-t w-full" />
       <div className="text-center font-medium mt-6 mb-12">
-        Juan Gaig 2025 &copy;
+        Juan Gaig {year} &copy;
       </div>
     </footer>
   );

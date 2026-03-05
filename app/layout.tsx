@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${interSans.variable} ${lora.variable} font-sans   antialiased`}
+        className={`${interSans.variable} ${lora.variable} font-sans antialiased`}
       >
         <Header />
         <main className="mx-auto max-w-5xl px-4">{children}</main>

@@ -1,50 +1,37 @@
+"use client";
 import Footer from "@/components/footer";
 import Confiaron from "@/components/confiaron";
 import Shortcuts from "@/components/shortcuts-metodologia";
+import { useState, useEffect } from "react";
+import Loader from "@/components/loading";
 
-const page = () => {
-  const data = [
-    {
-      title: "Tasación precisa",
-      description:
-        "Brindo una valoración clara, realista y fundamentada, basada en el análisis del mercado, datos comparables y más de 15 años de experiencia.",
-    },
-    {
-      title: "Análisis de documentación",
-      description:
-        "Reviso cada aspecto legal y técnico de la propiedad para asegurar que esté en condiciones óptimas de salir al mercado, anticipando posibles obstáculos.",
-    },
-    {
-      title: "Estrategia de comercialización personalizada",
-      description:
-        "Diseño un plan específico para cada propiedad, con un plazo de venta acordado entre las partes. No aplico fórmulas genéricas: cada caso es único.",
-    },
-    {
-      title: "Preparación visual de la propiedad",
-      description:
-        "Coordinamos fotografía profesional, plano, recorrido virtual 360°, video y tomas con dron (según las características del inmueble) para mostrarlo en su mejor versión.",
-    },
-    {
-      title: "Publicación en portales líderes",
-      description:
-        "Difundimos tu propiedad en las principales plataformas del mercado, como Zonaprop y Argenprop, con presencia destacada.",
-    },
-    {
-      title: "Red de contactos profesional",
-      description:
-        "Formo parte de MLS CABA y de CRS Internacional (Certified Residential Specialist), lo que me permite trabajar en conjunto con más de 40 inmobiliarias activas en el merca",
-    },
-    {
-      title: "Atención y seguimiento de interesados",
-      description:
-        "Acompaño personalmente cada visita, filtro los perfiles y realizo un seguimiento activo para generar encuentros realmente efectivos. Además, te mantengo informado en todo momento sobre el estado del proceso.",
-    },
-    {
-      title: "Negociación y cierre de operación",
-      description:
-        "Te acompaño hasta el cierre de la venta, cuidando cada detalle del proceso para que todo se concrete de forma segura.",
-    },
-  ];
+interface data {
+  id: number;
+  title: string;
+  text: string;
+}
+
+const Metodologia = () => {
+  const [data, setData] = useState<data[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  const apiURL = process.env.NEXT_PUBLIC_API_URL + "/metodology";
+
+  useEffect(() => {
+    async function getData() {
+      try {
+        const res = await fetch(apiURL);
+        if (!res.ok) throw new Error("Error al obtener datos de productos");
+        const data = await res.json();
+        setData(data);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    getData();
+  }, [apiURL]);
 
   return (
     <section className="max-w-5xl m-auto flex flex-col mt-40 gap-y-12">
@@ -70,21 +57,25 @@ const page = () => {
         </p>
       </div>
 
-      <div className="flex flex-col gap-y-8 lg:px-12 [&>:last-child]:border-b-0 mb-8">
-        {data.map((item, index) => (
-          <article key={index} className="flex">
-            <div className="w-16 lg:w-20">
-              <span className="text-5xl lg:text-6xl font-lora italic">
-                {index + 1}
-              </span>
-            </div>
-            <div className="flex-1 text-xl leading-6 mt-1">
-              <span className="font-bold">{item.title}</span>{" "}
-              <span>{item.description}</span>
-            </div>
-          </article>
-        ))}
-      </div>
+      {loading ? (
+        <Loader />
+      ) : (
+        <div className="flex flex-col gap-y-8 lg:px-12 [&>:last-child]:border-b-0 mb-8">
+          {data.map((item, index) => (
+            <article key={index} className="flex">
+              <div className="w-16 lg:w-20">
+                <span className="text-5xl lg:text-6xl font-lora italic">
+                  {index + 1}
+                </span>
+              </div>
+              <div className="flex-1 text-xl leading-6 mt-1">
+                <span className="font-bold">{item.title}</span>{" "}
+                <span>{item.text}</span>
+              </div>
+            </article>
+          ))}
+        </div>
+      )}
 
       <hr className="border-black border-t w-full mb-8" />
 
@@ -103,4 +94,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Metodologia;
