@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Logo, LogoSmall } from "@/lib/icons";
+import { LogoSmall } from "@/lib/icons";
 import { nav } from "@/lib/data";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
